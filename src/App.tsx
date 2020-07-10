@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { MainPage, OrderPage } from "./pages";
 import { Layout } from "./components";
 
-import "./styles/global.module.css";
+import './styles/styles.scss'
 
 function App() {
   return (

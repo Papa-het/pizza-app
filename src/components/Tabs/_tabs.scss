@@ -1,0 +1,22 @@
+.tabs {
+  @include flex-row;
+  list-style: none;
+
+  &-item {
+    background: #f9f9f9;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: all 0.3s;
+    margin-right: 15px;
+
+    &.active {
+      background: #282828;
+      color: #fff;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

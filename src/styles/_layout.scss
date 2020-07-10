@@ -1,0 +1,28 @@
+html {
+  height: 100%;
+}
+
+body {
+  font-family: "ProximaNova", sans-serif;
+  background: #ffdf8c;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  @include media-desktop {
+    width: calc(100% - 100px);
+  }
+}

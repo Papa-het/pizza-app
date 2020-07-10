@@ -1,0 +1,10 @@
+@import "./fonts";
+@import "./variables";
+@import "./mixins";
+@import "./layout";
+
+@import "../components/Header/header";
+@import "../components/Layout/layout";
+@import "../components/Tabs/tabs";
+
+@import "../pages/MainPage/mainPage";
