@@ -22,6 +22,10 @@ const PizzaCard: React.FC<{ pizza: Pizza }> = ({ pizza }) => {
       <img className="pizzaCard-img" src={pizza.imageUrl} alt={pizza.name} />
       <h3 className="pizzaCard-title">{pizza.name}</h3>
       <Controls active={active} handleClick={handleClick} />
+      <div className="pizzaCard-add">
+        <h3>от {pizza.price} тг</h3>
+        <button>Добавить</button>
+      </div>
     </div>
   );
 };
