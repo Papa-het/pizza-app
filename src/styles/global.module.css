@@ -1,0 +1,13 @@
+@import "./fonts.module.css";
+
+html {
+  height: 100%;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background: #ffdf8c;
+  font-family: 'ProximaNova', sans-serif;
+
+}
