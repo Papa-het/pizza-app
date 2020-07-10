@@ -1,0 +1,14 @@
+.sortBlock {
+    font-weight: bold;
+    &-selected {
+        font-weight: normal;
+        letter-spacing: 0.01em;
+        color: $color-orange;
+        margin-left: 5px;
+        border-bottom: 0.1px dashed $color-orange;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}

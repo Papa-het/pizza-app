@@ -1,0 +1,51 @@
+.pizzaCard {
+  position: relative;
+  height: 400px;
+
+  &-img {
+    position: relative;
+    max-width: 70%;
+    object-fit: contain;
+    left: 50%;
+    top: 8%;
+    transform: translateX(-50%);
+  }
+
+  &-title {
+    text-align: center;
+  }
+
+  &-controls {
+    @include flex-column;
+    background: #f3f3f3;
+    border-radius: 10px;
+    padding: 2px;
+    margin-top: 20px;
+
+    &--top,
+    &--second {
+      @include flex-row-space;
+
+      span {
+        width: 100%;
+        font-weight: bold;
+        text-align: center;
+        padding: 8px 3px;
+        margin: 5px;
+        height: 100%;
+        border-radius: 5px;
+        user-select: none;
+        transition: all 0.3s;
+
+        &.active {
+          background: #fff;
+          box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.04);
+        }
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

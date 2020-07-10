@@ -6,3 +6,17 @@
   @include flex-row-space;
   align-items: center;
 }
+
+.pizzas {
+  margin-top: 50px;
+
+  &-list {
+    margin-top: 60px;
+    display: grid;
+    gap: 80px 30px;
+    grid-auto-flow: row;
+    align-items: stretch;
+    justify-items: stretch;
+    grid-template: auto / 1fr 1fr 1fr 1fr;
+  }
+}
