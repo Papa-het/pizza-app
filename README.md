@@ -1,3 +1,3 @@
-## Available Scripts
+## React πzza app
 
 Just for fun:)
