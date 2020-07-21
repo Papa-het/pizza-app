@@ -19,7 +19,13 @@ const PizzaCard: React.FC<{ pizza: Pizza }> = ({ pizza }) => {
 
   return (
     <div className="pizzaCard">
-      <img className="pizzaCard-img" src={pizza.imageUrl} alt={pizza.name} />
+      <img
+        className="pizzaCard-img lazyload"
+        src="https://cdn.dodostatic.net/site-static/dist/0332f02a568137b99a7e.svg"
+        data-src={pizza.imageUrl}
+        alt={pizza.name}
+        loading="lazy"
+      />
       <h3 className="pizzaCard-title">{pizza.name}</h3>
       <Controls active={active} handleClick={handleClick} />
       <div className="pizzaCard-add">

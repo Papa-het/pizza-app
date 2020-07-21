@@ -4,7 +4,9 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { MainPage, OrderPage } from "./pages";
 import { Layout } from "./components";
 
-import './styles/styles.scss'
+import "./styles/styles.scss";
+import "lazysizes";
+import "lazysizes/plugins/parent-fit/ls.parent-fit";
 
 function App() {
   return (
