@@ -1,6 +1,6 @@
 import * as React from "react";
 
-const Header: React.FC = () => {
+const HeaderComponent: React.FC = () => {
   return (
     <div className="header">
       <div className="container">
@@ -21,5 +21,7 @@ const Header: React.FC = () => {
     </div>
   );
 };
+
+const Header = React.memo(HeaderComponent);
 
 export { Header };

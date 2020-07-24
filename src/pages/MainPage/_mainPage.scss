@@ -12,11 +12,20 @@
 
   &-list {
     margin-top: 60px;
-    display: grid;
-    gap: 120px 30px;
-    grid-auto-flow: row;
-    align-items: stretch;
-    justify-items: stretch;
-    grid-template: auto / 1fr 1fr 1fr 1fr;
+
+    @include media-middle {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    @include media-desktop {
+      display: grid;
+      gap: 120px 30px;
+      grid-auto-flow: row;
+      align-items: stretch;
+      justify-items: stretch;
+      grid-template: auto / 1fr 1fr 1fr 1fr;
+    }
   }
 }

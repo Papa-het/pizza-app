@@ -11,7 +11,7 @@ interface IProps {
   handleClick: (str: string, isTop: boolean) => void;
 }
 
-const Controls: React.FC<IProps> = ({ active, handleClick }) => {
+const ControlsComponent: React.FC<IProps> = ({ active, handleClick }) => {
   return (
     <div className="pizzaCard-controls">
       <div className="pizzaCard-controls--top">
@@ -40,5 +40,7 @@ const Controls: React.FC<IProps> = ({ active, handleClick }) => {
     </div>
   );
 };
+
+const Controls = React.memo(ControlsComponent);
 
 export { Controls };

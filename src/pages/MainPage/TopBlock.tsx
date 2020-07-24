@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Tabs, Sort } from "src/components";
 
-const TopBlock: React.FC = () => {
+const TopBlockComponent: React.FC = () => {
   return (
     <div className="topBlock">
       <Tabs />
@@ -9,5 +9,7 @@ const TopBlock: React.FC = () => {
     </div>
   );
 };
+
+const TopBlock = React.memo(TopBlockComponent);
 
 export { TopBlock };

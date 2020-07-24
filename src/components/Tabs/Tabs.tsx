@@ -1,18 +1,20 @@
 import * as React from "react";
 import cn from "classnames";
 
+import { Store } from "src/context";
+
 const list = ["Все", "Мясные", "Вегетарианская", "Гриль", "Острые", "Закрытые"];
 
-const Tabs: React.FC = () => {
-  const [activeTab, setActiveTab] = React.useState(0);
+const TabsComponent: React.FC = () => {
+  const { currentType, setCurrentType } = React.useContext(Store);
 
   return (
     <ul className="tabs">
       {list.map((el, i) => (
         <li
-          className={cn("tabs-item", { active: i === activeTab })}
+          className={cn("tabs-item", { active: i === currentType })}
           key={i}
-          onClick={() => setActiveTab(i)}
+          onClick={() => setCurrentType(i)}
         >
           {el}
         </li>
@@ -20,5 +22,7 @@ const Tabs: React.FC = () => {
     </ul>
   );
 };
+
+const Tabs = React.memo(TabsComponent);
 
 export { Tabs };

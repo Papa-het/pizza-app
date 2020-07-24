@@ -2,7 +2,7 @@ import * as React from "react";
 import { TopBlock } from "./TopBlock";
 import { PizzaListBlock } from "./PizzaListBlock";
 
-const MainPage: React.FC = () => {
+const MainPageComponent: React.FC = () => {
   return (
     <div className="mainPage">
       <div className="container">
@@ -12,5 +12,7 @@ const MainPage: React.FC = () => {
     </div>
   );
 };
+
+const MainPage = React.memo(MainPageComponent);
 
 export { MainPage };

@@ -25,6 +25,18 @@
 }
 
 // media
+@mixin media-small {
+  @media (min-width: $small) {
+    @content;
+  }
+}
+
+@mixin media-middle {
+  @media (min-width: $middle) {
+    @content;
+  }
+}
+
 @mixin media-desktop {
   @media (min-width: $desktop) {
     @content;
