@@ -8,12 +8,17 @@ const secondList = ["26 см.", "30 см.", "40 см."];
 
 interface IProps {
   active: StateActive;
+  shake: boolean;
   handleClick: (str: string, isTop: boolean) => void;
 }
 
-const ControlsComponent: React.FC<IProps> = ({ active, handleClick }) => {
+const ControlsComponent: React.FC<IProps> = ({
+  active,
+  handleClick,
+  shake,
+}) => {
   return (
-    <div className="pizzaCard-controls">
+    <div className={cn("pizzaCard-controls", { shake })}>
       <div className="pizzaCard-controls--top">
         {topList.map((el, i) => (
           <span

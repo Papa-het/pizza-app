@@ -10,12 +10,22 @@ const PizzaCard: React.FC<{ pizza: Pizza }> = ({ pizza }) => {
     type: "",
     size: "",
   });
+  const [shake, handleShake] = React.useState<boolean>(false);
 
-  const handleClick = (str: string, isTop: boolean) =>
+  const handleClick = (str: string, isTop: boolean) => {
+    if (shake) handleShake(false);
     setActive({
       type: isTop ? str : active.type,
       size: isTop ? active.size : str,
     });
+  };
+
+  const handleAdd = () => {
+    if (!active.type && !active.size) {
+      setTimeout(() => handleShake(false), 3000);
+      handleShake(true);
+    }
+  };
 
   return (
     <div className="pizzaCard">
@@ -27,10 +37,10 @@ const PizzaCard: React.FC<{ pizza: Pizza }> = ({ pizza }) => {
         loading="lazy"
       />
       <h3 className="pizzaCard-title">{pizza.name}</h3>
-      <Controls active={active} handleClick={handleClick} />
+      <Controls shake={shake} active={active} handleClick={handleClick} />
       <div className="pizzaCard-add">
         <h3>от {pizza.price} тг</h3>
-        <button>Добавить</button>
+        <button onClick={handleAdd}>Добавить</button>
       </div>
     </div>
   );
