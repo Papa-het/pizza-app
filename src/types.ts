@@ -8,3 +8,8 @@ export type Pizza = {
   category: number;
   rating: number;
 };
+
+export interface OrderPizza extends Pizza {
+  selectedSize: number;
+  selectedType: number;
+}

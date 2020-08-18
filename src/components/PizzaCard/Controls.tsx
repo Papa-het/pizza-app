@@ -3,13 +3,20 @@ import cn from "classnames";
 
 import { StateActive } from "./PizzaCard";
 
-const topList = ["тонкое", "традиционное"];
-const secondList = ["26 см.", "30 см.", "40 см."];
+const topList = [
+  { label: "тонкое", value: 0 },
+  { label: "традиционное", value: 1 },
+];
+const secondList = [
+  { label: "26 см.", value: 0 },
+  { label: "30 см.", value: 1 },
+  { label: "40 см.", value: 2 },
+];
 
 interface IProps {
   active: StateActive;
   shake: boolean;
-  handleClick: (str: string, isTop: boolean) => void;
+  handleClick: (value: number, isTop: boolean) => void;
 }
 
 const ControlsComponent: React.FC<IProps> = ({
@@ -23,10 +30,10 @@ const ControlsComponent: React.FC<IProps> = ({
         {topList.map((el, i) => (
           <span
             key={i}
-            onClick={() => handleClick(el, true)}
-            className={cn({ active: active.type === el })}
+            onClick={() => handleClick(el.value, true)}
+            className={cn({ active: active.type === el.value })}
           >
-            {el}
+            {el.label}
           </span>
         ))}
       </div>
@@ -35,10 +42,10 @@ const ControlsComponent: React.FC<IProps> = ({
         {secondList.map((el, i) => (
           <span
             key={i}
-            onClick={() => handleClick(el, false)}
-            className={cn({ active: active.size === el })}
+            onClick={() => handleClick(el.value, false)}
+            className={cn({ active: active.size === el.value })}
           >
-            {el}
+            {el.label}
           </span>
         ))}
       </div>

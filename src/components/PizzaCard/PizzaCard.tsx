@@ -1,22 +1,28 @@
 import * as React from "react";
 
 import { Controls } from "./Controls";
+
+import { Store } from "src/context";
 import { Pizza } from "src/types";
 
-export type StateActive = { type: string; size: string };
+export type StateActive = {
+  type: number;
+  size: number;
+};
 
 const PizzaCard: React.FC<{ pizza: Pizza }> = ({ pizza }) => {
   const [active, setActive] = React.useState<StateActive>({
-    type: "",
-    size: "",
+    type: 0,
+    size: 0,
   });
   const [shake, handleShake] = React.useState<boolean>(false);
+  const { orderList, setOrderList } = React.useContext(Store);
 
-  const handleClick = (str: string, isTop: boolean) => {
+  const handleClick = (value: number, isTop: boolean) => {
     if (shake) handleShake(false);
     setActive({
-      type: isTop ? str : active.type,
-      size: isTop ? active.size : str,
+      type: isTop ? value : active.type,
+      size: isTop ? active.size : value,
     });
   };
 
@@ -25,6 +31,15 @@ const PizzaCard: React.FC<{ pizza: Pizza }> = ({ pizza }) => {
       setTimeout(() => handleShake(false), 3000);
       handleShake(true);
     }
+
+    return setOrderList([
+      ...orderList,
+      {
+        ...pizza,
+        selectedSize: active.size,
+        selectedType: active.type,
+      },
+    ]);
   };
 
   return (
